@@ -6,11 +6,13 @@ import {
   EditOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
-import Layout from "./../components/Layout/Layout";
+// import Layout from "./../components/Layout/Layout";
+import UserLayout from "../components/Layout/UserLayout";
 import axios from "axios";
 import Spinner from "./../components/Spinner";
 import moment from "moment";
 import Analytics from "../components/Analytics";
+import Sidebar from "../components/Sidebar";
 const { RangePicker } = DatePicker;
 
 const HomePage = () => {
@@ -138,7 +140,8 @@ const HomePage = () => {
   };
 
   return (
-    <Layout>
+    <UserLayout>
+      {/* <Sidebar /> */}
       {loading && <Spinner />}
       <div className="filters">
         <div>
@@ -230,9 +233,9 @@ const HomePage = () => {
           <Form.Item label="Date" name="date">
             <Input type="date" />
           </Form.Item>
-          <Form.Item label="Refrence" name="refrence">
+          {/* <Form.Item label="Refrence" name="refrence">
             <Input type="text" required />
-          </Form.Item>
+          </Form.Item> */}
           <Form.Item label="Description" name="description">
             <Input type="text" required />
           </Form.Item>
@@ -244,7 +247,7 @@ const HomePage = () => {
           </div>
         </Form>
       </Modal>
-    </Layout>
+      </UserLayout>
   );
 };
 

@@ -16,11 +16,22 @@ const Header = () => {
   const logoutHandler = () => {
     localStorage.removeItem("user");
     message.success("Logout Successfully");
-    navigate("/");
+    navigate("/login");
   };
   return (
     <>
-      <nav className="navbar navbar-expand-lg">
+    <nav className='h-[10vh] flex bg-gradient-to-r from-[#373739] to-blue-500 top-0 bg-[#373739] justify-between text-white ' >
+      <div className='flex justify-start items-center'>
+      <p className='m-[1rem] text-[1.5rem] text-white'>Income Expense Manager</p>
+      {/* <p className='text-[1.5rem] hover:text-blue-500'><Link to="/">Home</Link></p> */}
+    </div>
+    <div className='flex justify-start items-center p-[2rem] '>
+       <p className='m-[1rem] text-[1.5rem] text-white'>Hello {loginUser.name}</p>
+       <button className="'bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"onClick={logoutHandler}  ><Link to="/">Logout</Link></button>
+    </div>
+       
+     </nav>
+      {/* <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -52,7 +63,7 @@ const Header = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
     </>
   );
 };

@@ -3,12 +3,13 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
     <>
       <Routes>
-      <Route path="/" element={<Navbar />} />
+      <Route path="/" element={<MainPage />} />
         <Route
           path="/home"
           element={
@@ -28,7 +29,7 @@ export function ProtectedRoutes(props) {
   if (localStorage.getItem("user")) {
     return props.children;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 }
 
